@@ -42,7 +42,7 @@ func (s *Server) Start()  {
 	}
 
 	m := &mux.Router{}
-	Register(m)
+	Register(m,s)
 	s.Logger.Printf("Listening %s...", s.Config.Listen)
 	http.ListenAndServe(s.Config.Listen , m)
 
